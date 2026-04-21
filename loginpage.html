@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: antiquewhite;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial;
+}
+
+.main {
+    width: 400px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* FORM ROW (KEY FIX) */
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    width: 90px;      /* fixed label width */
+    font-weight: bold;
+}
+
+.inp {
+    flex: 1;          /* input takes remaining space */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+#question {
+    margin-right: 10px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="main">
+<h2 style="text-align:center;">Login</h2>
+
+<form id="loginForm">
+
+<div class="form-row">
+<label>Email:</label>
+<input type="text" id="loginUser" class="inp" required>
+</div>
+
+<div class="form-row">
+<label>Password:</label>
+<input type="password" id="loginPass" class="inp" required>
+</div>
+
+<div class="form-row">
+<label>Captcha:</label>
+<span id="question"></span>
+<input type="number" id="captcha" class="inp" required>
+</div>
+
+<button type="submit">Login</button>
+
+</form>
+</div>
+
+<script>
+let num1, num2, correctAnswer;
+
+function generateCaptcha() {
+    num1 = Math.floor(Math.random() * 10);
+    num2 = Math.floor(Math.random() * 10);
+    correctAnswer = num1 * num2;
+    document.getElementById("question").innerText = num1 + " * " + num2 + " = ";
+}
+
+generateCaptcha();
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let user = document.getElementById("loginUser").value;
+    let pass = document.getElementById("loginPass").value;
+    let cap = document.getElementById("captcha").value;
+
+    let storedUser = localStorage.getItem("username");
+    let storedPass = localStorage.getItem("password");
+
+    if(Number(cap) !== correctAnswer){
+        alert("Wrong Captcha");
+        return;
+    }
+
+    if(user !== storedUser || pass !== storedPass){
+        alert("Invalid Login");
+        return;
+    }
+
+    alert("Login Successful!");
+    window.location.href = "hostelproj.html";
+});
+</script>
+
+</body>
+</html>

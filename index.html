@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostel H10</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+}
+/* Navbar */
+nav {
+    background: #1e293b;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav a:hover {
+    color: #38bdf8;
+}
+
+
+.hero {
+    position: relative;
+}
+.hero img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container {
+    padding: 40px;
+}
+
+.section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 2px solid #1e293b;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+/* HEADINGS */
+.section h2 {
+    text-align: center;
+    color: #1e293b;
+}
+
+/* FACILITIES*/
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.card {
+    width: 60%;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #2563eb;
+    text-align: center;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/*TABLE*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+th {
+    background: #2563eb;
+    color: white;
+}
+
+/*BUTTON*/
+.btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 12px;
+    background: #2563eb;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/*MAP*/
+iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/*FOOTER*/
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #1e293b;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="#">Home</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#fees">Fees</a>
+    <a href="#leave">Leave</a>
+    <a href="#location">Location</a>
+    <a href="loginpage.html">Login</a>
+</nav>
+
+
+<div class="hero">
+
+<img src="hostel.jpeg" usemap="#hostelmap">
+
+<map name="hostelmap">
+    <area shape="rect" coords="0,0,1600,1000"
+    href="https://www.nitkkr.ac.in"
+    target="_blank">
+</map>
+
+<div class="hero-text">
+    <h1>Visvesvaraya Bhawan</h1>
+    <p>Click image to visit NIT Kurukshetra</p>
+</div>
+
+</div>
+
+<div class="container">
+
+<!-- FACILITIES -->
+<div class="section" id="facilities">
+<h2>Facilities</h2>
+<div class="cards">
+    <div class="card">24x7 Electricity</div>
+    <div class="card">High-Speed WiFi</div>
+    <div class="card">Mess Facility</div>
+    <div class="card">Gym</div>
+    <div class="card">CCTV Security</div>
+</div>
+</div>
+
+<!-- FEES -->
+<div class="section" id="fees">
+<h2>Hostel Fees</h2>
+<table>
+<tr>
+<th>Room</th>
+<th>Fees</th>
+</tr>
+<tr>
+<td>Single</td>
+<td>₹40,000</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>₹30,000</td>
+</tr>
+<tr>
+<td>Triple</td>
+<td>₹25,000</td>
+</tr>
+</table>
+</div>
+
+<!-- LEAVE -->
+<div class="section" id="leave">
+<h2>Leave Application</h2>
+<a href="medicalform.html" class="btn">Apply Leave</a>
+</div>
+
+<!-- LOCATION -->
+<div class="section" id="location">
+<h2>Hostel Location</h2>
+<iframe height="400"
+src="https://maps.google.com/maps?q=nit%20kurukshetra&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+</div>
+
+</div>
+
+<footer>
+© 2026 Hostel H10
+</footer>
+
+</body>
+</html>

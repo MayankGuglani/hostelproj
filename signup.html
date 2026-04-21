@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup Page</title>
+
+<style>
+/* BODY */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #2563eb, #1e293b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* CARD */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* TITLE */
+h2 {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+/* INPUTS */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: #1e40af;
+}
+
+/* LINK */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Signup</h2>
+
+    <form onsubmit="return registerUser()">
+        <input type="text" id="signupUser" placeholder="Enter Username" required>
+        <input type="password" id="signupPass" placeholder="Enter Password" required>
+        <input type="password" id="confirmPass" placeholder="Confirm Password" required>
+        
+        <button type="submit">Signup</button>
+    </form>
+
+    <p>
+        Already have an account? 
+        <a href="loginpage.html">Login here</a>
+    </p>
+</div>
+
+<script>
+function registerUser() {
+    let user = document.getElementById("signupUser").value;
+    let pass = document.getElementById("signupPass").value;
+    let confirm = document.getElementById("confirmPass").value;
+
+    if (pass !== confirm) {
+        alert("Passwords do not match!");
+        return false;
+    }
+
+    localStorage.setItem("username", user);
+    localStorage.setItem("password", pass);
+
+    alert("Signup successful! Please login.");
+    window.location.href = "loginpage.html";
+    return false;
+}
+</script>
+
+</body>
+</html>
